@@ -1,2 +1,3 @@
-<button (click)="click$.next()">update Hour</button>
+<input type="text" #number>
+<button (click)="click$.next(number.value)">Update Hour</button>
 <h1> {{ clock$ | async }}</h1>

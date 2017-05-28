@@ -5,16 +5,18 @@ import { Injectable } from '@angular/core';
 
 export class ClockActions {
     static SET_SECONDS = '[Clock] SET SECONDS';
-    setSeconds(): Action {
+    setSeconds(seconds: number): Action {
         return {
-            type: ClockActions.SET_SECONDS
+            type: ClockActions.SET_SECONDS,
+            payload: seconds
         }
     }
 
     static SET_HOURS = '[Clock] SET HOURS'; 
-    setHours(): Action {
+    setHours(hours: number): Action {
         return {
-            type: ClockActions.SET_HOURS
+            type: ClockActions.SET_HOURS,
+            payload: hours
         }
     }
     

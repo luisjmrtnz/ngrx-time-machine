@@ -19,5 +19,13 @@ export class ClockActions {
             payload: hours
         }
     }
-    
+
+    static UPDATE_TIME = '[Clock] UPDATE TIME';
+    updateTime(person): Action {
+        return {
+            type: ClockActions.UPDATE_TIME,
+            payload: person
+        }
+    }
 }
+

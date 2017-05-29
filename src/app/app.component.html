@@ -1,3 +1,5 @@
 <input type="text" #number>
-<button (click)="click$.next(number.value)">Update Hour</button>
-<h1> {{ clock$ | async }}</h1>
+<button (click)="click$.next(number.value); number.value = ''">Update Hour</button>
+<clock [date]="clock$ | async"></clock>
+<people [people]="people$ | async"
+    (update$)="onUpdate($event)"></people>

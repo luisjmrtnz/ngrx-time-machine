@@ -15,3 +15,33 @@ export function clockReducer(state = new Date(), action: Action) {
             return state;
     }
 };
+
+const people = [
+    { 
+        id: 1,
+        name: 'Maria',
+        time: ''
+    },
+    { 
+        id: 2,
+        name: 'Jose',
+        time: ''
+    },
+    { 
+        id: 3,
+        name: 'Miguel',
+        time: ''
+    }
+];
+
+export function peopleReducer(state = people, action: Action){
+    switch(action.type) {
+        case ClockActions.UPDATE_TIME:
+            let id = action.payload.id;
+            return state.map( person => {
+                return (person.id === id)? Object.assign({}, person, {time: new Date().toString()}) : person;
+            });
+        default: 
+            return state;
+    }
+}
